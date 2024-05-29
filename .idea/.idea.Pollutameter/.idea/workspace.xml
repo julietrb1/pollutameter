@@ -11,23 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="27e84bfc-042e-4c57-a69e-f65a47aa6f64" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Pollutameter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Pollutameter/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pollutameter.Api/src/Pollutameter.Api/Controllers/CalculatorController.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pollutameter.Api/src/Pollutameter.Api/Models/AirQualityResponse.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pollutameter.Api/src/Pollutameter.Api/Models/NaqSiteWithDistance.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pollutameter.Api/src/Pollutameter.Api/Models/ObservationResponse.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pollutameter.Api/src/Pollutameter.Api/Models/ObservationWithSite.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pollutameter.Api/src/Pollutameter.Api/Naq/NaqApi.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pollutameter.Api/src/Pollutameter.Api/Naq/NaqObservationResult.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pollutameter.Api/src/Pollutameter.Api/Naq/NaqParameter.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pollutameter.Api/src/Pollutameter.Api/Naq/NaqSite.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pollutameter.Api/src/Pollutameter.Api/Pollutameter.Api.csproj" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pollutameter.Api/src/Pollutameter.Api/Program.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pollutameter.Api/src/Pollutameter.Api/Readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pollutameter.Api/src/Pollutameter.Api/appsettings.Development.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pollutameter.Api/src/Pollutameter.Api/appsettings.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pollutameter.Api/src/Pollutameter.Api/aws-lambda-tools-defaults.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pollutameter.Api/src/Pollutameter.Api/serverless.template" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pollutameter.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Pollutameter.sln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pollutameter.Api/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pollutameter.Api/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,32 +47,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Launch Settings Profile.Pollutameter.Web: http.executor&quot;: &quot;Run&quot;,
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;rider.code.cleanup.on.save&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/juliet/Applications/Rider.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.Pollutameter.Web: http.executor": "Run",
+    ".NET Project.Pollutameter.Api.executor": "Run",
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.stylelint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.stylelint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "rider.code.cleanup.on.save": "true",
+    "settings.editor.selected.configurable": "preferences.sourceCode.ASP.NET (Razor)",
+    "ts.external.directory.path": "/Users/juliet/Applications/Rider.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;/Users/juliet/Library/Application Support/JetBrains/Rider2024.1/resharper-host/DecompilerCache&quot;,
-      &quot;/Users/juliet/Library/Application Support/JetBrains/Rider2024.1/resharper-host/SourcesCache&quot;,
-      &quot;/Users/juliet/Library/Application Support/Symbols/src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "/Users/juliet/Library/Application Support/JetBrains/Rider2024.1/resharper-host/DecompilerCache",
+      "/Users/juliet/Library/Application Support/JetBrains/Rider2024.1/resharper-host/SourcesCache",
+      "/Users/juliet/Library/Application Support/Symbols/src"
     ]
   }
-}</component>
+}]]></component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -96,21 +81,21 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.Pollutameter.Web: http">
+  <component name="RunManager" selected=".NET Project.Pollutameter.Api">
     <configuration name="Pollutameter.Api" type="DotNetProject" factoryName=".NET Project">
-      <option name="EXE_PATH" value="" />
+      <option name="EXE_PATH" value="$PROJECT_DIR$/Pollutameter.Api/bin/Debug/net8.0/Pollutameter.Api.dll" />
       <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Pollutameter.Api" />
       <option name="PASS_PARENT_ENVS" value="1" />
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
-      <option name="PROJECT_PATH" value="$PROJECT_DIR$/Pollutameter.Api/src/Pollutameter.Api/Pollutameter.Api.csproj" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/Pollutameter.Api/Pollutameter.Api.csproj" />
       <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
       <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
       <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
       <option name="PROJECT_KIND" value="DotNetCore" />
-      <option name="PROJECT_TFM" value="" />
+      <option name="PROJECT_TFM" value="net8.0" />
       <method v="2">
         <option name="Build" />
       </method>
@@ -155,7 +140,7 @@
       <option name="presentableId" value="Default" />
       <updated>1716951523439</updated>
       <workItem from="1716951525414" duration="18448000" />
-      <workItem from="1716982688452" duration="31000" />
+      <workItem from="1716982688452" duration="1728000" />
     </task>
     <servers />
   </component>

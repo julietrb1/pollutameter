@@ -18,7 +18,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 var naqApi = new NaqApi();
 
-app.MapPost("/air-quality", async (double latitude, double longitude, double maxKm = 10) =>
+app.MapGet("/air-quality", async (double latitude, double longitude, double maxKm = 10) =>
     {
         var observationsTask = naqApi.FetchObservations();
         var sites = await naqApi.FetchSitesWithLocation();
