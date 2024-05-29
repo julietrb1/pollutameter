@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace Pollutameter.Web.NAQ;
+namespace Pollutameter.Web.Naq;
 
 public record NaqSite(
     [property: JsonPropertyName("Site_Id")]

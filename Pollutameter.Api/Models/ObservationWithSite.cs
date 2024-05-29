@@ -1,4 +1,4 @@
-using Pollutameter.Web.NAQ;
+using Pollutameter.Web.Naq;
 
 namespace Pollutameter.Web.Models;
 

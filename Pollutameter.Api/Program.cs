@@ -1,34 +1,27 @@
-using System.Text;
 using Geolocation;
 using Pollutameter.Web.Models;
-using Pollutameter.Web.NAQ;
+using Pollutameter.Web.Naq;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+// Add services to the container.
+builder.Services.AddControllers();
+
+// Add AWS Lambda support. When application is run in Lambda Kestrel is swapped out as the web server with Amazon.Lambda.AspNetCoreServer. This
+// package will act as the webserver translating request and responses between the Lambda event source and ASP.NET Core.
+builder.Services.AddAWSLambdaHosting(LambdaEventSource.RestApi);
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
 
 app.UseHttpsRedirection();
-
-HttpClient naqHttpClient = new()
-{
-    BaseAddress = new Uri("https://data.airquality.nsw.gov.au")
-};
-
-naqHttpClient.DefaultRequestHeaders.Add("Accept", "application/json");
+app.UseAuthorization();
+var naqApi = new NaqApi();
 
 app.MapPost("/air-quality", async (double latitude, double longitude, double maxKm = 10) =>
     {
-        var observationsTask = FetchObservations();
-        var sites = await FetchSitesWithLocation();
+        var observationsTask = naqApi.FetchObservations();
+        var sites = await naqApi.FetchSitesWithLocation();
         var sitesWithDistance = sites.Select(site =>
         {
             var distanceInKm = GeoCalculator.GetDistance(latitude, longitude, (double)site.Latitude,
@@ -72,24 +65,3 @@ app.MapPost("/air-quality", async (double latitude, double longitude, double max
     .WithOpenApi();
 
 app.Run();
-return;
-
-async Task<IEnumerable<NaqObservationResult>> FetchObservations()
-{
-    var observationsResponse = (await naqHttpClient.PostAsync("/api/Data/get_Observations", new StringContent("{\"\"}",
-            Encoding.UTF8,
-            "application/json")))
-        .EnsureSuccessStatusCode();
-    var observations = await observationsResponse.Content.ReadFromJsonAsync<IEnumerable<NaqObservationResult>>() ??
-                       throw new InvalidOperationException("No observation results found");
-    return observations.Where(observation => observation.Value != null);
-}
-
-async Task<IEnumerable<NaqSite>> FetchSitesWithLocation()
-{
-    var observationsResponse = (await naqHttpClient.GetAsync("/api/Data/get_Sitedetails"))
-        .EnsureSuccessStatusCode();
-    var sites = await observationsResponse.Content.ReadFromJsonAsync<IEnumerable<NaqSite>>() ??
-                throw new InvalidOperationException("No sites found");
-    return sites.Where(site => site is { Latitude: not null, Longitude: not null, SiteName: not "Test Site" });
-}

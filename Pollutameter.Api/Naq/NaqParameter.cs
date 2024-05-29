@@ -1,4 +1,4 @@
-namespace Pollutameter.Web.NAQ;
+namespace Pollutameter.Web.Naq;
 
 public record NaqParameter(
     string ParameterCode,

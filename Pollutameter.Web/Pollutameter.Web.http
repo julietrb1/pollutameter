@@ -1,6 +1,0 @@
-@Pollutameter.Web_HostAddress = http://localhost:5002
-
-GET {{Pollutameter.Web_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
