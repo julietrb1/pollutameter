@@ -14,8 +14,8 @@ builder.Services.AddAWSLambdaHosting(LambdaEventSource.RestApi);
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
 builder.Services.AddOptions<NaqOptions>().BindConfiguration(nameof(NaqOptions));
+builder.Services.AddHealthChecks();
 
 var app = builder.Build();
 if (app.Environment.IsDevelopment())
@@ -29,6 +29,7 @@ if (naqOptions == null)
     throw new InvalidOperationException("NaqOptions section required in appsettings.json or similar");
 var naqApi = new NaqApi(naqOptions.Value.BaseUri);
 
+app.MapHealthChecks("/healthz");
 app.MapGet("/air-quality", async (double latitude, double longitude, double maxKm = 10) =>
     {
         var observationsTask = naqApi.FetchObservations();
