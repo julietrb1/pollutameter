@@ -10,7 +10,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27e84bfc-042e-4c57-a69e-f65a47aa6f64" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Pollutameter.Api/Domain/AirQualitySummary.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pollutameter.Api/Domain/NaqSiteWithDistance.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pollutameter.Api/Domain/SiteGroup.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Pollutameter.Api/Response/AirQualityResponse.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Pollutameter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Pollutameter/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pollutameter.Api/Models/AirQualityResponse.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pollutameter.Api/Models/NaqSiteWithDistance.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pollutameter.Api/Models/ObservationResponse.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pollutameter.Api/Models/ObservationWithSite.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pollutameter.Api/Naq/NaqApi.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pollutameter.Api/Naq/NaqApi.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pollutameter.Api/Naq/NaqObservationResult.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pollutameter.Api/Naq/NaqObservationResult.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pollutameter.Api/Naq/NaqParameter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pollutameter.Api/Naq/NaqParameter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pollutameter.Api/Naq/NaqSite.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pollutameter.Api/Naq/NaqSite.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Pollutameter.Api/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pollutameter.Api/Program.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,9 +37,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8d632098f1cb4a61b0ed7e2b63cd2b5590c00/fe/64eb576b/ThrowHelper.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/af1cde752157457591fac815f2f4c4df10118/88/17f9e033/OpenApiEndpointConventionBuilderExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e8b80b817ac34f5d8f59922b85a267511d8a00/0c/25ef7bed/HttpHeaders.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
@@ -62,7 +72,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "rider.code.cleanup.on.save": "true",
-    "settings.editor.selected.configurable": "preferences.sourceCode.ASP.NET (Razor)",
+    "settings.editor.selected.configurable": "actions.on.save",
     "ts.external.directory.path": "/Users/juliet/Applications/Rider.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
     "vue.rearranger.settings.migration": "true"
   },
@@ -140,8 +150,18 @@
       <option name="presentableId" value="Default" />
       <updated>1716951523439</updated>
       <workItem from="1716951525414" duration="18448000" />
-      <workItem from="1716982688452" duration="1728000" />
+      <workItem from="1716982688452" duration="3093000" />
+      <workItem from="1717043769749" duration="10930000" />
     </task>
+    <task id="LOCAL-00001" summary="Use get for air-quality endpoint">
+      <option name="closed" value="true" />
+      <created>1716984844923</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1716984844923</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -152,6 +172,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="Use get for air-quality endpoint" />
+    <option name="LAST_COMMIT_MESSAGE" value="Use get for air-quality endpoint" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

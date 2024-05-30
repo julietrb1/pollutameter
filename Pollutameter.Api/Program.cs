@@ -1,6 +1,8 @@
+using System.Collections.Frozen;
 using Geolocation;
-using Pollutameter.Web.Models;
-using Pollutameter.Web.Naq;
+using Pollutameter.Api.Domain;
+using Pollutameter.Api.Naq;
+using Pollutameter.Api.Response;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,7 +23,7 @@ var naqApi = new NaqApi();
 app.MapGet("/air-quality", async (double latitude, double longitude, double maxKm = 10) =>
     {
         var observationsTask = naqApi.FetchObservations();
-        var sites = await naqApi.FetchSitesWithLocation();
+        var sites = await naqApi.FetchSites();
         var sitesWithDistance = sites.Select(site =>
         {
             var distanceInKm = GeoCalculator.GetDistance(latitude, longitude, (double)site.Latitude,
@@ -29,37 +31,26 @@ app.MapGet("/air-quality", async (double latitude, double longitude, double maxK
             return new NaqSiteWithDistance(site.SiteId, site.SiteName,
                 distanceInKm, Math.Round(1 / distanceInKm, 3, MidpointRounding.AwayFromZero));
         });
-        var closeSites = sitesWithDistance
+        var siteGroups = sitesWithDistance
             .Where(site => site.DistanceInKm < maxKm)
-            .OrderBy(site => site.DistanceInKm);
+            .ToFrozenDictionary(site => site.SiteId,
+                site => new SiteGroup(new List<NaqObservationResult>(), site));
 
         var observations = await observationsTask;
-        IList<ObservationWithSite> filteredObservationWithSites = [];
-        double totalInvertedDistance = 0;
         foreach (var observation in observations)
         {
-            var site = closeSites.SingleOrDefault(site => site.SiteId == observation.SiteId);
-            if (site == null) continue;
+            if (!siteGroups.TryGetValue(observation.SiteId, out var siteGroup)) continue;
             if (observation is not
                 {
-                    Parameter: { Frequency: NaqParameterFrequency.HourlyAverage, ParameterCode: NaqParameterCode.Pm25 },
+                    Parameter: { Frequency: NaqParameterFrequency.HourlyAverage },
                     Value: not null
-                })
+                } || !NaqParameterCode.AllCodes.Contains(observation.Parameter.ParameterCode))
                 continue;
 
-            totalInvertedDistance += site.InvertedDistance;
-            filteredObservationWithSites.Add(new ObservationWithSite(observation, site));
+            siteGroup.Observations.Add(observation);
         }
 
-        var totalWeightedPm25 =
-            filteredObservationWithSites.Aggregate((double)0,
-                (total, joined) => total + (double)joined.Observation.Value *
-                    (joined.Site.InvertedDistance / totalInvertedDistance));
-
-        var observationResponses = filteredObservationWithSites.Select(filtered =>
-            new ObservationResponse((double)filtered.Observation.Value, filtered.Site, filtered.Observation.Hour));
-        return new AirQualityResponse(observationResponses,
-            Math.Round(totalWeightedPm25, 3, MidpointRounding.AwayFromZero));
+        return new AirQualityResponse(siteGroups.Values);
     })
     .WithName("GetAirQuality")
     .WithOpenApi();

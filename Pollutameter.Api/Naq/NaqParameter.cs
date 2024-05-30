@@ -1,4 +1,4 @@
-namespace Pollutameter.Web.Naq;
+namespace Pollutameter.Api.Naq;
 
 public record NaqParameter(
     string ParameterCode,
@@ -17,4 +17,6 @@ public static class NaqParameterFrequency
 public static class NaqParameterCode
 {
     public const string Pm25 = "PM2.5";
+    public const string Pm10 = "PM10";
+    public static IReadOnlySet<string> AllCodes = new HashSet<string>([Pm25, Pm10]);
 }

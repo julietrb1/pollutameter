@@ -1,6 +1,6 @@
 using System.Text;
 
-namespace Pollutameter.Web.Naq;
+namespace Pollutameter.Api.Naq;
 
 public class NaqApi
 {
@@ -28,7 +28,7 @@ public class NaqApi
         return observations.Where(observation => observation.Value != null);
     }
 
-    public async Task<IEnumerable<NaqSite>> FetchSitesWithLocation()
+    public async Task<IEnumerable<NaqSite>> FetchSites()
     {
         var observationsResponse = (await _naqHttpClient.GetAsync("/api/Data/get_Sitedetails"))
             .EnsureSuccessStatusCode();
