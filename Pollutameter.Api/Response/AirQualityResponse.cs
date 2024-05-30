@@ -11,9 +11,9 @@ public record AirQualityResponse(
         get
         {
             var sumInverseDistancePm25 = SiteGroups.Aggregate((double)0, (current, siteGroup) =>
-                current + (siteGroup.AirQuality.Pm25 != null ? siteGroup.Site.InverseDistance : 0));
+                current + (siteGroup.AirQuality.Pm25ForHour != null ? siteGroup.Site.InverseDistance : 0));
             var sumInverseDistancePm10 = SiteGroups.Aggregate((double)0, (current, siteGroup) =>
-                current + (siteGroup.AirQuality.Pm10 != null ? siteGroup.Site.InverseDistance : 0));
+                current + (siteGroup.AirQuality.Pm10ForHour != null ? siteGroup.Site.InverseDistance : 0));
             return SiteGroups.Aggregate(new AirQuality(0, 0),
                 (airQualitySummary, siteGroup) =>
                 {
@@ -24,8 +24,8 @@ public record AirQualityResponse(
                         ? siteGroup.Site.InverseDistance / sumInverseDistancePm10
                         : 0;
                     return new AirQuality(
-                        airQualitySummary.Pm25 + (siteGroup.AirQuality.Pm25 ?? 0) * inverseDistanceRatioPm25,
-                        airQualitySummary.Pm10 + (siteGroup.AirQuality.Pm10 ?? 0) * inverseDistanceRatioPm10
+                        airQualitySummary.Pm25ForHour + (siteGroup.AirQuality.Pm25ForHour ?? 0) * inverseDistanceRatioPm25,
+                        airQualitySummary.Pm10ForHour + (siteGroup.AirQuality.Pm10ForHour ?? 0) * inverseDistanceRatioPm10
                     );
                 });
         }
