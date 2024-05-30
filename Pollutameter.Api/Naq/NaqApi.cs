@@ -6,11 +6,11 @@ public class NaqApi
 {
     private readonly HttpClient _naqHttpClient;
 
-    public NaqApi()
+    public NaqApi(string baseUri)
     {
         _naqHttpClient = new HttpClient
         {
-            BaseAddress = new Uri("https://data.airquality.nsw.gov.au")
+            BaseAddress = new Uri(baseUri)
         };
 
         _naqHttpClient.DefaultRequestHeaders.Add("Accept", "application/json");

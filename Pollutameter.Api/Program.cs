@@ -1,5 +1,7 @@
 using System.Collections.Frozen;
 using Geolocation;
+using Microsoft.Extensions.Options;
+using Pollutameter.Api.Configuration;
 using Pollutameter.Api.Domain;
 using Pollutameter.Api.Naq;
 using Pollutameter.Api.Response;
@@ -13,6 +15,8 @@ builder.Services.AddAWSLambdaHosting(LambdaEventSource.RestApi);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+builder.Services.AddOptions<NaqOptions>().BindConfiguration(nameof(NaqOptions));
+
 var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
@@ -20,7 +24,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-var naqApi = new NaqApi();
+var naqOptions = app.Services.GetService<IOptions<NaqOptions>>();
+if (naqOptions == null) throw new Exception("NaqOptions section required in appsettings.json or similar");
+var naqApi = new NaqApi(naqOptions.Value.BaseUri);
 
 app.MapGet("/air-quality", async (double latitude, double longitude, double maxKm = 10) =>
     {
