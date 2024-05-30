@@ -57,4 +57,4 @@ app.MapGet("/air-quality", async (double latitude, double longitude, double maxK
     .WithName("GetAirQuality")
     .WithOpenApi();
 
-app.Run();
+await app.RunAsync();
