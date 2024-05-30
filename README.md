@@ -4,6 +4,7 @@ Air quality measurement, without the sensors.
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=julietrb1_pollutameter&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=julietrb1_pollutameter)
 [![Dotnet Build Status](https://github.com/julietrb1/pollutameter/actions/workflows/dotnet.yml/badge.svg)](https://github.com/julietrb1/pollutameter/actions/workflows/dotnet.yml/badge.svg)
+![GitHub License](https://img.shields.io/github/license/julietrb1/pollutameter)
 
 ## What Do?
 
