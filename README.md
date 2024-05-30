@@ -20,3 +20,9 @@ the inverse distance provides a weight, and that all gets mashed together into a
 
 Licensed as copyleft under the [GNU General Public License v3.0](https://spdx.org/licenses/GPL-3.0-or-later.html).
 Because sharing is caring! :)
+
+### NSW Air Quality API License
+
+Users must note though that any data accessed are owned by DPIE and protected by Crown Copyright, unless credited 
+otherwise. These are licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0), subject to the State
+of New South Wales Crown requirements.
