@@ -11,7 +11,9 @@ public record NaqParameter(
 
 public static class NaqParameterFrequency
 {
-    public const string HourlyAverage = "Hourly average";
+    public const string AverageForHour = "Hourly average";
+    public const string AverageFor24H = "24h rolling average derived from 1h average";
+    public static IReadOnlySet<string> AllFrequencies = new HashSet<string>([AverageForHour, AverageFor24H]);
 }
 
 public static class NaqParameterCode

@@ -19,6 +19,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
 var naqApi = new NaqApi();
 
 app.MapGet("/air-quality", async (double latitude, double longitude, double maxKm = 10) =>
@@ -41,11 +42,11 @@ app.MapGet("/air-quality", async (double latitude, double longitude, double maxK
         foreach (var observation in observations)
         {
             if (!siteGroups.TryGetValue(observation.SiteId, out var siteGroup)) continue;
-            if (observation is not
-                {
-                    Parameter: { Frequency: NaqParameterFrequency.HourlyAverage },
-                    Value: not null
-                } || !NaqParameterCode.AllCodes.Contains(observation.Parameter.ParameterCode))
+            if (
+                observation.Value == null
+                || !NaqParameterFrequency.AllFrequencies.Contains(observation.Parameter.Frequency)
+                || !NaqParameterCode.AllCodes.Contains(observation.Parameter.ParameterCode)
+            )
                 continue;
 
             siteGroup.Observations.Add(observation);
