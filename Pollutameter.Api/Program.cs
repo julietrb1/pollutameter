@@ -25,7 +25,8 @@ if (app.Environment.IsDevelopment())
 }
 
 var naqOptions = app.Services.GetService<IOptions<NaqOptions>>();
-if (naqOptions == null) throw new Exception("NaqOptions section required in appsettings.json or similar");
+if (naqOptions == null)
+    throw new InvalidOperationException("NaqOptions section required in appsettings.json or similar");
 var naqApi = new NaqApi(naqOptions.Value.BaseUri);
 
 app.MapGet("/air-quality", async (double latitude, double longitude, double maxKm = 10) =>
