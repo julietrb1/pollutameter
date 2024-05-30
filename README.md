@@ -6,7 +6,7 @@ This casual .NET side-project implements a proximity-based approximation of air 
 Australia. Given your latitude and longitude, it will find the nearest sensor readings using the government's
 [Air Quality Data API](https://data.airquality.nsw.gov.au/docs/index.html).
 
-It combines these readings (currently PM2.5 only) by calculating their distance from your position, weighting readings
+It combines these readings by calculating their distance from your position, weighting readings
 from sensors nearest to you using the [Haversine formula](http://en.wikipedia.org/wiki/Haversine_formula). With this,
 the inverse distance provides a weight, and that all gets mashed together into a final number.
 
