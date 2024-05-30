@@ -1,9 +1,10 @@
+using System.Text.Json.Serialization;
 using Pollutameter.Api.Naq;
 
 namespace Pollutameter.Api.Domain;
 
 public record SiteGroup(
-    IList<NaqObservationResult> Observations,
+    [property: JsonIgnore] IList<NaqObservationResult> Observations,
     NaqSiteWithDistance Site)
 {
     public AirQualitySummary AirQualitySummary => new(Pm25, Pm10);

@@ -9,21 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27e84bfc-042e-4c57-a69e-f65a47aa6f64" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Pollutameter.Api/Domain/AirQualitySummary.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pollutameter.Api/Domain/NaqSiteWithDistance.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pollutameter.Api/Domain/SiteGroup.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Pollutameter.Api/Response/AirQualityResponse.cs" afterDir="false" />
+    <list default="true" id="27e84bfc-042e-4c57-a69e-f65a47aa6f64" name="Changes" comment="Add PM10 with new app structure">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Pollutameter/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Pollutameter/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pollutameter.Api/Models/AirQualityResponse.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pollutameter.Api/Models/NaqSiteWithDistance.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pollutameter.Api/Models/ObservationResponse.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pollutameter.Api/Models/ObservationWithSite.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pollutameter.Api/Naq/NaqApi.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pollutameter.Api/Naq/NaqApi.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pollutameter.Api/Naq/NaqObservationResult.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pollutameter.Api/Naq/NaqObservationResult.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pollutameter.Api/Naq/NaqParameter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pollutameter.Api/Naq/NaqParameter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pollutameter.Api/Naq/NaqSite.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pollutameter.Api/Naq/NaqSite.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Pollutameter.Api/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pollutameter.Api/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pollutameter.Api/Domain/SiteGroup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pollutameter.Api/Domain/SiteGroup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Pollutameter.Api/Response/AirQualityResponse.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Pollutameter.Api/Response/AirQualityResponse.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +140,7 @@
       <updated>1716951523439</updated>
       <workItem from="1716951525414" duration="18448000" />
       <workItem from="1716982688452" duration="3093000" />
-      <workItem from="1717043769749" duration="10930000" />
+      <workItem from="1717043769749" duration="12389000" />
     </task>
     <task id="LOCAL-00001" summary="Use get for air-quality endpoint">
       <option name="closed" value="true" />
@@ -161,7 +150,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716984844923</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add PM10 with new app structure">
+      <option name="closed" value="true" />
+      <created>1717068030031</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1717068030031</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,7 +170,8 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Use get for air-quality endpoint" />
-    <option name="LAST_COMMIT_MESSAGE" value="Use get for air-quality endpoint" />
+    <MESSAGE value="Add PM10 with new app structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add PM10 with new app structure" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
