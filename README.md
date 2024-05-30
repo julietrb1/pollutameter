@@ -1,9 +1,13 @@
 # Pollutameter
 
+Air quality measurement, without the sensors.
+
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=julietrb1_pollutameter&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=julietrb1_pollutameter)
+
 ## What Do?
 
-This casual .NET side-project implements a proximity-based approximation of air quality calculation in New South Wales, 
-Australia. Given your latitude and longitude, it will find the nearest sensor readings using the government's
+This casual .NET side-project implements a proximity-based approximation of air quality calculation (currently only for 
+New South Wales, Australia). Given your latitude and longitude, it will find the nearest sensor readings using the government's
 [Air Quality Data API](https://data.airquality.nsw.gov.au/docs/index.html).
 
 It combines these readings by calculating their distance from your position, weighting readings
